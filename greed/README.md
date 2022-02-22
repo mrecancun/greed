@@ -34,3 +34,15 @@ root                    (project root folder)
 ## Authors
 ---
 * # TODO: Add your name and email here
+
+actor    Peter
+artifact     (revisar)
+cast         
+director    Agustin
+keyboard  (michelle, casi  completo)
+video     (por ahora no tocar)
+color   (complete)
+point   (revisar)
+score   Bryce     (Todo el mensaje que salga en la esquina superior izquierda)
+readme  Peter
+main  Agustin
