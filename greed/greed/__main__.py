@@ -21,8 +21,8 @@ CELL_SIZE = 15
 FONT_SIZE = 15
 COLS = 60
 ROWS = 40
-CAPTION = "Robot Finds Kitten"
-DATA_PATH = os.path.dirname(os.path.abspath(__file__)) + "/data/messages.txt"
+CAPTION = "Greed"
+# DATA_PATH = os.path.dirname(os.path.abspath(__file__)) + "/data/messages.txt"
 WHITE = Color(255, 255, 255)
 DEFAULT_ARTIFACTS = 40
 twoArtifacts=[42,111]
@@ -32,13 +32,14 @@ def main():
     # create the cast
     cast = Cast()
     
-    # create the banner
-    banner = Actor()
-    banner.set_text("") # crear Banner score keeping
-    banner.set_font_size(FONT_SIZE)
-    banner.set_color(WHITE)
-    banner.set_position(Point(CELL_SIZE, 0))
-    cast.add_actor("banners", banner)
+    # create the score_keeper
+    score = Actor()
+    score.set_text("SCORE: 0") # crear score score keeping. This line leaves the score text empty.
+    score.set_font_size(FONT_SIZE)
+    score.set_color(WHITE)
+    score.set_position(Point(CELL_SIZE, 0))
+    cast.add_actor("scores", score)
+    score_text=score._text
     
     # create the robot
     x = int(MAX_X / 2)
@@ -53,14 +54,14 @@ def main():
     cast.add_actor("robots", robot)
     
     # create the artifacts
-    with open(DATA_PATH) as file:
-        data = file.read()
-        messages = data.splitlines()
+    # with open(DATA_PATH) as file:
+        # data = file.read()
+        # messages
 
     for n in range(DEFAULT_ARTIFACTS):
         ind=random.randint(0, 1)
         text = chr(twoArtifacts[ind])
-        message = messages[n]
+        # message = messages[n]
 
         x = random.randint(1, COLS - 1)
         y = random.randint(1, ROWS - 1)
@@ -77,7 +78,7 @@ def main():
         artifact.set_font_size(FONT_SIZE)
         artifact.set_color(color)
         artifact.set_position(position)
-        artifact.set_message(message)
+        # artifact.set_message(score_text) Capaz se puede crear una funcion para añadir a score
         artifact.set_velocity(Point(0,1))
         cast.add_actor("artifacts", artifact)
         
