@@ -11,18 +11,4 @@ class Artifact (Actor):
 
         super (). __init__ ()
 
-    def set_message(self, message):
-        """Sets the actor's message".
-        
-        Args:
-            color (Color): The given color.
-        """
-        self._message = message
-
-    def get_message(self):
-        """Gets the actor's  message.
-        
-        Returns:
-            string: The actor's textual representation.
-        """
-        return self._message
+    
