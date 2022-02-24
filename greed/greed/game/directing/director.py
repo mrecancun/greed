@@ -59,13 +59,14 @@ class Director:
         for artifact in artifacts:
             artifact.move_next(max_x, max_y)
             if robot.get_position().equals(artifact.get_position()):
-                # message = artifact.get_message()
-                # score.set_text(message)    
+                cast.remove_actor ("artifacts", artifact)
+
                 if artifact.get_text()=='o':
                     score.subtract()
                 elif artifact.get_text()=='*':
                     score.add()
-                score.set_text(f"SCORE: {score.get_score}")
+                score.set_text (f"SCORE: {score.get_score()}")
+
 
         
     def _do_outputs(self, cast):

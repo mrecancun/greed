@@ -12,6 +12,7 @@ from game.services.video_service import VideoService
 
 from game.shared.color import Color
 from game.shared.point import Point
+from game.casting.score import Score
 
 
 FRAME_RATE = 12
@@ -33,7 +34,7 @@ def main():
     cast = Cast()
     
     # create the score_keeper
-    score = Actor()
+    score = Score()
     score.set_text("SCORE: 0") # crear score score keeping. This line leaves the score text empty.
     score.set_font_size(FONT_SIZE)
     score.set_color(WHITE)
@@ -65,6 +66,7 @@ def main():
 
         x = random.randint(1, COLS - 1)
         y = random.randint(1, ROWS - 1)
+
         position = Point(x, y)
         position = position.scale(CELL_SIZE)
 
