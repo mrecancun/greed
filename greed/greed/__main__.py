@@ -81,7 +81,7 @@ def main():
         artifact.set_color(color)
         artifact.set_position(position)
         # artifact.set_message(score_text) Capaz se puede crear una funcion para añadir a score
-        artifact.set_velocity(Point(0,1))
+        artifact.set_velocity(Point(0,5))
         cast.add_actor("artifacts", artifact)
         
     

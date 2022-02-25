@@ -1,3 +1,6 @@
+import random
+from game.shared.point import Point
+from game.casting.score import Score
 class Director:
     """A person who directs the game. 
     
@@ -17,6 +20,7 @@ class Director:
         """
         self._keyboard_service = keyboard_service
         self._video_service = video_service
+        self._score=Score()
         
     def start_game(self, cast):
         """Starts the game using the given cast. Runs the main game loop.
@@ -66,7 +70,12 @@ class Director:
                 elif artifact.get_text()=='*':
                     score.add()
                 score.set_text (f"SCORE: {score.get_score()}")
-
+                x = random.randint(1, 60 - 1)
+                y = 1
+                position = Point(x, y)
+                position = position.scale(15)
+                artifact.set_position(position)
+                cast.add_actor('artifacts', artifact)
 
         
     def _do_outputs(self, cast):
