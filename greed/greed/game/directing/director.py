@@ -20,6 +20,7 @@ class Director:
         """
         self._keyboard_service = keyboard_service
         self._video_service = video_service
+        """Gets value from the Score class"""
         self._score=Score()
         
     def start_game(self, cast):
@@ -55,7 +56,6 @@ class Director:
         robot = cast.get_first_actor("robots")
         artifacts = cast.get_actors("artifacts")
 
-        # score.set_text("")
         max_x = self._video_service.get_width()
         max_y = self._video_service.get_height()
         robot.move_next(max_x, max_y)
@@ -64,11 +64,14 @@ class Director:
             artifact.move_next(max_x, max_y)
             if robot.get_position().equals(artifact.get_position()):
                 cast.remove_actor ("artifacts", artifact)
-
+                
+                """If the palyer touches 'o', the game substracts 1 from the score
+                If the player touches '*' it adds 1 """
                 if artifact.get_text()=='o':
                     score.subtract()
                 elif artifact.get_text()=='*':
                     score.add()
+                """Updates to the new score"""
                 score.set_text (f"SCORE: {score.get_score()}")
                 x = random.randint(1, 60 - 1)
                 y = 1
