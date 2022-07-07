@@ -19,9 +19,8 @@ project folder. Select the main module inside the hunter folder and click the "r
 The project files and folders are organized as follows:
 ```
 root                    (project root folder)
-+-- rfk                 (source code for game)
-  +-- data              (data files for game)
-  +-- game              (specific game classes)
++-- greed               (source code for game)
+  +-- game              (data files for game)
   +-- __main__.py       (entry point for program)
 +-- README.md           (general info)
 ```
@@ -33,7 +32,12 @@ root                    (project root folder)
 
 ## Authors
 ---
-* # TODO: Add your name and email here
+* Michelle Farr (mrecancun@hotmail.com)
+  Bryce Hiroshi Williams
+  Agustin Aguilar
+  Peter Otim
+  Nilo Urmeneta(urmenetanilo@gmail.com)
+
 
 actor    Peter
 artifact     (revisar)
@@ -44,5 +48,5 @@ video     (por ahora no tocar)
 color   (complete)
 point   (revisar)
 score   Bryce     (Todo el mensaje que salga en la esquina superior izquierda)
-readme  Peter
+readme  Nilo
 main  Agustin

@@ -8,7 +8,7 @@ class Artifact (Actor):
         """Constructs a new artifact."""
         self._message = ""
         self._velocity = Point(0,1)
-
+        """Inherits __init__ from the Actor class"""
         super (). __init__ ()
 
     
